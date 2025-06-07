@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emotion Wheel</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    canvas {
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      max-width: 90vw;
+      max-height: 90vw;
+    }
+    #spin {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      background-color: #ff7043;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+    #spin:hover {
+      background-color: #e65c2e;
+    }
+    #emotionResult {
+      margin-top: 25px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #333;
+      min-height: 40px;
+      text-align: center;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Emotion Wheel</h1>
+  <canvas id="wheel" width="400" height="400"></canvas>
+  <button id="spin">Spin</button>
+  <div id="emotionResult"></div>
+
+  <script>
+    const emotions = [
+      { name: 'H
